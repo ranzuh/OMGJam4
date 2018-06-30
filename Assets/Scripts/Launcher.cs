@@ -11,6 +11,8 @@ public class Launcher : MonoBehaviour {
     {
         Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float distance = -Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        distance = Mathf.Clamp(distance, 1, 10);
+
         if (Input.GetMouseButtonDown(0))
         {
             Destroy(this);

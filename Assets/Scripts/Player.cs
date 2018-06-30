@@ -8,14 +8,12 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private int multiplier = 5;
 
-	// Update is called once per frame
-	void Update () {
+    void Update() {
         Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+        float distance = -Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (Input.GetMouseButtonDown(0)) {
-            float distance = -Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Destroy(this);
             GetComponent<Rigidbody2D>().AddForce(multiplier * distance * direction);
         }
-        //rigidbody.AddForce(Input.mousePosition);
     }
 }

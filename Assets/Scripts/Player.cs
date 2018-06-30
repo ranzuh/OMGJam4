@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
     
     [SerializeField]
     private int multiplier = 5;
+    
+    int foodCount = 0;
 
 	// Update is called once per frame
 	void Update () {
@@ -17,5 +19,11 @@ public class Player : MonoBehaviour {
             GetComponent<Rigidbody2D>().AddForce(multiplier * distance * direction);
         }
         //rigidbody.AddForce(Input.mousePosition);
+
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Destroy(col.gameObject);
     }
 }

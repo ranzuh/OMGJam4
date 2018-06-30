@@ -4,23 +4,17 @@ using UnityEngine;
 
 [ExecuteInEditMode]
 public class Player : MonoBehaviour {
-
-    Rigidbody2D rigidbody;
+    
     [SerializeField]
-    Vector2 momentum;
+    private int multiplier = 5;
 
-    // Use this for initialization
-	void Start () {
-        rigidbody = GetComponent<Rigidbody2D>();
-	}
-	
 	// Update is called once per frame
 	void Update () {
-        momentum = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("dsaf");
-            rigidbody.AddForce(100*momentum);
+            float distance = -Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            GetComponent<Rigidbody2D>().AddForce(multiplier * distance * direction);
         }
         //rigidbody.AddForce(Input.mousePosition);
     }

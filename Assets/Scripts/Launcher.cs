@@ -7,6 +7,9 @@ public class Launcher : MonoBehaviour {
     [SerializeField]
     private int multiplier = 5;
 
+    [SerializeField]
+    AudioClip boostSound;
+
     void Update()
     {
         Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -17,6 +20,12 @@ public class Launcher : MonoBehaviour {
         {
             Destroy(this);
             GetComponent<Rigidbody2D>().AddForce(multiplier * distance * direction);
+            
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = boostSound;
+            audio.Play();
+
         }
         //rigidbody.AddForce(Input.mousePosition);
 

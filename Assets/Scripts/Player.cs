@@ -7,6 +7,9 @@ public class Player : MonoBehaviour {
     
     int foodCount = 0;
 
+    [SerializeField]
+    AudioClip collisionSound;
+
     Text text;
 
     void Start() {
@@ -19,6 +22,10 @@ public class Player : MonoBehaviour {
         Destroy(col.gameObject);
         foodCount++;
         SetScoreText();
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = collisionSound;
+        audio.Play();
+
     }
 
     void SetScoreText() {

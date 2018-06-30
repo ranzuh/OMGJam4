@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80492fd6e9bf374da5e062a5e495f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 696a5c465e76d4740a212cf6af56e898, type: 3}
+  collisionSound: {fileID: 8300000, guid: 696a5c465e76d4740a212cf6af56e898, type: 3}
 --- !u!114 &114379410026683548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 45
+  boostSound: {fileID: 8300000, guid: d4b314fa7afd243efa8f15d99c2b9940, type: 3}
 --- !u!114 &114933508737760454
 MonoBehaviour:
   m_ObjectHideFlags: 1

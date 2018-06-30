@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
     
     int foodCount = 0;
 
+    public GameObject text;
+
     void OnCollisionEnter2D(Collision2D col)
     {
         Destroy(col.gameObject);

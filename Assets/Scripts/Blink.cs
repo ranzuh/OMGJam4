@@ -3,17 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Blink : MonoBehaviour {
+    
+    [SerializeField]
+    bool rotate;
+    [SerializeField]
+    [Range(0,1)]
+    float rotateSpeed;
 
-    public float curTime = 0;
-	// Update is called once per frame
-	void Update () {
-        Color c = GetComponent<SpriteRenderer>().material.GetColor("_Color");
-        
-        curTime += Time.deltaTime;
-        Debug.Log(Mathf.Lerp(0, 1, curTime / 1000));
-        Color newColor = new Color(c.r, c.g, c.b, Mathf.Lerp(0.5f, 0.75f, Mathf.Sin(curTime*Mathf.PI)));
-        GetComponent<SpriteRenderer>().material.SetColor("_Color", newColor);
+    [SerializeField]
+    bool fade;
+    [SerializeField]
+    bool changeColor;
+    
+    void Update() {
 
-        transform.Rotate(new Vector3(0,0,0.5f));
+        Color newColor = GetComponent<SpriteRenderer>().material.color;
+
+        if (fade) { 
+            newColor.a = Mathf.Lerp(0.5f, 0.75f, Mathf.Sin(Time.time * Mathf.PI));
+            GetComponent<SpriteRenderer>().material.color = newColor;
+        }
+        if(rotate)
+            transform.Rotate(new Vector3(0,0,rotateSpeed));
+
+        if (changeColor) {
+            newColor.r = Mathf.Abs(Mathf.LerpUnclamped(0.25f, 0.75f, Mathf.Cos(Time.time)));
+            newColor.g = Mathf.Lerp(0.25f, 0.75f, Mathf.Sin(Time.time * Mathf.PI));
+            newColor.b = Mathf.Abs(Mathf.LerpUnclamped(0.5f, 0.75f, Mathf.Cos(Time.time/2)));
+            GetComponent<SpriteRenderer>().material.SetColor("_Color", newColor);
+        }
 	}
 }

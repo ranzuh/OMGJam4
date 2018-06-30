@@ -13,6 +13,8 @@ public class Blink : MonoBehaviour {
     [SerializeField]
     bool fade;
     [SerializeField]
+    bool fade2;
+    [SerializeField]
     bool changeColor;
     
     void Update() {
@@ -21,6 +23,10 @@ public class Blink : MonoBehaviour {
 
         if (fade) { 
             newColor.a = Mathf.Lerp(0.5f, 0.75f, Mathf.Sin(Time.time * Mathf.PI));
+            GetComponent<SpriteRenderer>().material.color = newColor;
+        }
+        if (fade2) { 
+            newColor.a = Mathf.Lerp(0.5f, 0.75f, (Mathf.Sin(Time.time * Mathf.PI)+1)/2);
             GetComponent<SpriteRenderer>().material.color = newColor;
         }
         if(rotate)

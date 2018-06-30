@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[ExecuteInEditMode]
 public class Player : MonoBehaviour {
     
     int foodCount = 0;
 
-    public GameObject text;
+    Text text;
+
+    void Start() {
+        text = GameObject.Find("Scoretext").GetComponent<Text>();
+        SetScoreText();
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         Destroy(col.gameObject);
         foodCount++;
-        Debug.Log(foodCount);
+        SetScoreText();
+    }
+
+    void SetScoreText() {
+        text.text = "Score: " + foodCount.ToString();
     }
 }

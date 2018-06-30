@@ -14,7 +14,6 @@ public class Player : MonoBehaviour {
         Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float distance = -Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (Input.GetMouseButtonDown(0)) {
-            Destroy(this);
             GetComponent<Rigidbody2D>().AddForce(multiplier * distance * direction);
         }
         //rigidbody.AddForce(Input.mousePosition);
@@ -24,5 +23,7 @@ public class Player : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         Destroy(col.gameObject);
+        foodCount++;
+        Debug.Log(foodCount);
     }
 }

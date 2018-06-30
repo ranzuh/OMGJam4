@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Camera
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3103615399
+    locked: 0
+  - name: Food
+    uniqueID: 4245027269
     locked: 0
   - name: Player
     uniqueID: 1693961653

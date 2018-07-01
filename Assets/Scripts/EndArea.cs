@@ -11,7 +11,9 @@ public class EndArea : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Player"))
             if (collision.gameObject.GetComponent<Player>().CheckWin()) {
-                Instantiate(field).transform.position = transform.position;
+                GameObject go = Instantiate(field);
+                go.transform.position = transform.position;
+                go.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
                 StartCoroutine("ShrinkPlayer");
             }
     }

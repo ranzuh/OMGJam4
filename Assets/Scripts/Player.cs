@@ -14,9 +14,7 @@ public class Player : MonoBehaviour {
 
     [SerializeField]
     GameObject[] food;
-
-    GameObject[] wall;
-
+    
     [SerializeField]
     GameObject finish;
 
@@ -28,7 +26,6 @@ public class Player : MonoBehaviour {
 
     void Start() {
         food = GameObject.FindGameObjectsWithTag("MustEat");
-        wall = GameObject.FindGameObjectsWithTag("Wall");
         finish = GameObject.FindGameObjectWithTag("Finish");
 
         text = GameObject.Find("Scoretext").GetComponent<Text>();

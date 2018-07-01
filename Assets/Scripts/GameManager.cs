@@ -5,8 +5,6 @@ public class GameManager : MonoBehaviour {
 
     private static GameObject singleton = null;
 
-    public int wons = 0;
-
     public static GameObject Instance {
     get {
             if (singleton == null) {
@@ -15,13 +13,11 @@ public class GameManager : MonoBehaviour {
                 DontDestroyOnLoad(singleton);
             }
             return singleton;
-            
         }
     }
 
     public void Win() {
-        Debug.Log("VICTORY½");
-        wons++;
+        Debug.Log("VICTORY½");Camera.current.
     }
 
 }

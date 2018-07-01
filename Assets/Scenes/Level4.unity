@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 776136025}
   - component: {fileID: 776136024}
   - component: {fileID: 776136028}
+  - component: {fileID: 776136029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -423,6 +424,17 @@ Skybox:
   m_GameObject: {fileID: 776136023}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 9097f701a22513c4394dc16cc095caa8, type: 2}
+--- !u!114 &776136029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 776136023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00182aa6e872749f0919e6eee2250fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &921741267
 Prefab:
   m_ObjectHideFlags: 0
@@ -758,10 +770,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0

@@ -19,6 +19,7 @@ public class Transition : MonoBehaviour {
 		Color color = image.color;
 		Debug.Log("test");
 		
+		yield return new WaitForSeconds(1);
 
 		while (elapsed <= duration) {
 			color.a = Mathf.Lerp(0,1,elapsed / duration);
@@ -28,14 +29,6 @@ public class Transition : MonoBehaviour {
 		} 
 		
 		StopAllCoroutines();
-		
-		
-		
-		
-		
-
-		
-
 	}
 
 }

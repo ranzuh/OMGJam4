@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject[] food;
 
+    GameObject[] wall;
+
     [SerializeField]
     GameObject finish;
 
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour {
 
     void Start() {
         food = GameObject.FindGameObjectsWithTag("MustEat");
+        wall = GameObject.FindGameObjectsWithTag("Wall");
         finish = GameObject.FindGameObjectWithTag("Finish");
 
         text = GameObject.Find("Scoretext").GetComponent<Text>();
@@ -41,20 +44,24 @@ public class Player : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        GameObject collidedFood = col.gameObject;
+        if(col.gameObject.tag == "MustEat") {
+            GameObject collidedFood = col.gameObject;
+            List<GameObject> foodList = new List<GameObject>(food);
+            foodList.Remove(collidedFood);
+            food = foodList.ToArray();
+
+            foodCount++;
+            SetScoreText();
+
+            if (finish == null)
+                CheckWin();
+        }
+        
         Destroy(col.gameObject);
-        foodCount++;
-        SetScoreText();
+        
         AudioSource audio = GetComponent<AudioSource>();
         audio.clip = collisionSound;
         audio.Play();
-
-        List<GameObject> foodList = new List<GameObject>(food);
-        foodList.Remove(collidedFood);
-        food = foodList.ToArray();
-
-        if (finish == null)
-            CheckWin();
 
     }
 

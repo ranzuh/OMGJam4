@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 82114829918554032}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,6 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionSound: {fileID: 8300000, guid: 696a5c465e76d4740a212cf6af56e898, type: 3}
+  food: []
+  finish: {fileID: 0}
 --- !u!114 &114379410026683548
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -448,6 +448,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1244980402617360, guid: ee278efa8da664624b561591715b5015, type: 2}
+      propertyPath: m_TagString
+      value: MustEat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee278efa8da664624b561591715b5015, type: 2}
   m_IsPrefabParent: 0
@@ -509,6 +513,10 @@ Prefab:
         type: 2}
       propertyPath: rotateSpeed
       value: 0.504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903202710212160, guid: b455fcb1a88838946bf1cd2854e93c10, type: 2}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b455fcb1a88838946bf1cd2854e93c10, type: 2}

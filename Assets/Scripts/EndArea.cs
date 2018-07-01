@@ -6,6 +6,7 @@ public class EndArea : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("VICTORY!");
+        if(collision.gameObject.tag.Equals("Player"))
+            collision.gameObject.GetComponent<Player>().CheckWin();
     }
 }

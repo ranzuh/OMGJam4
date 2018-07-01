@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 58913095856931964}
   - component: {fileID: 212424501819837180}
   - component: {fileID: 114382023737724506}
+  - component: {fileID: 114235380502741072}
   m_Layer: 0
   m_Name: RandomFood
   m_TagString: Untagged
@@ -104,6 +105,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &114235380502741072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710446587406130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e01ba99750e1a542b46a027f16e9817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
 --- !u!114 &114382023737724506
 MonoBehaviour:
   m_ObjectHideFlags: 1

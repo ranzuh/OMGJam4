@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114341924776967578}
   - component: {fileID: 114528949325122594}
   - component: {fileID: 58479724998484638}
+  - component: {fileID: 95295338244930906}
   m_Layer: 0
   m_Name: endArea
   m_TagString: Finish
@@ -58,6 +59,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.28
+--- !u!95 &95295338244930906
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903202710212160}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66063611c22a7664eabc4de601e82dcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114341924776967578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a7d90e30f733f4c8f3bd60cd82a6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  field: {fileID: 1761499663376638, guid: 07c2eff3d3409624aa99091500718caf, type: 2}
 --- !u!114 &114528949325122594
 MonoBehaviour:
   m_ObjectHideFlags: 1

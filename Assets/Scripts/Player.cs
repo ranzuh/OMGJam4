@@ -73,16 +73,30 @@ public class Player : MonoBehaviour {
         return false;
     }
 
-    public void Win() {
-        // WIN
-        Debug.Log("VICTORY½");
+    public void Win() {        
+        StartCoroutine("EndLevel");
+    }
 
-        //Fade screen
-        panel = Instantiate(panel);
-        panel.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        panel.GetComponent<Transition>().FadeIn();
-        
-        Invoke("NextScene", 1.5f);
+    IEnumerator EndLevel()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        int frames = 0;
+        float target = 256;
+        while (frames < target)
+        {
+            player.GetComponent<Rigidbody2D>().drag += 0.1f;
+            player.transform.localScale = Vector3.Lerp(player.transform.localScale, Vector3.zero, frames / target);
+            if (Vector3.Distance(player.transform.localScale, Vector3.zero) < 0.1f)
+                break;
+            frames++;
+            yield return null;
+        }
+        player.transform.localScale = Vector3.zero;
+        player.GetComponent<Rigidbody2D>().drag = 1000;
+        if(finish != null)
+           finish.GetComponent<Animator>().enabled = true;
+        yield return null;
     }
 
     private void OnBecameInvisible()
@@ -96,9 +110,18 @@ public class Player : MonoBehaviour {
         text.text = "Score: " + foodCount.ToString();
     }
 
-    void NextScene() {
+    IEnumerator NextScene() {
+        //Fade screen
+        panel = Instantiate(panel);
+        panel.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        yield return panel.GetComponent<Transition>().Fade();
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        StopCoroutine("EndLevel");
         SceneManager.LoadScene(currentSceneIndex + 1);
+
+
     }
 
     IEnumerator FollowPlayer() {

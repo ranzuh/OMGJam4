@@ -10,11 +10,7 @@ public class Transition : MonoBehaviour {
 	float duration = 0.5f;
 	float elapsed = 0;
 
-	public void FadeIn() {
-		StartCoroutine("Fade");
-	}
-
-	IEnumerator Fade() {
+	public IEnumerator Fade() {
 		Image image = GetComponent<Image>();
 		Color color = image.color;
 		Debug.Log("test");

@@ -8,33 +8,33 @@ public class MoveBetweenPoints : MonoBehaviour {
     GameObject[] endPoints;
 
     [SerializeField]
-    float duration = 5;
+    float duration = 5000;
 
-    private int endPoint = 0;        
+    private int startPoint = 0;        
     private float targetTime;
 
     private void Start()
     {
-        targetTime = duration;
+        targetTime = Time.time+duration;
     }
     // Update is called once per frame
     void FixedUpdate () {
-        GameObject target = endPoints[endPoint % endPoints.Length];
-        GameObject startPoint = endPoints[endPoint+1 % endPoints.Length];
+        GameObject target = endPoints[(startPoint+1) % endPoints.Length];
+        GameObject start = endPoints[startPoint % endPoints.Length];
 
-        Vector2 realPos = target.transform.position;        
-        Vector2 moveVector = Vector2.Lerp(startPoint.transform.position, realPos, (targetTime- Time.time)/duration);
+        Vector2 realPos = target.transform.position;
+        Vector2  moveVector = Vector2.Lerp(start.transform.position, realPos, 1-((targetTime - Time.time)/duration));
         transform.position = moveVector;
 
-        float dist = Vector3.Distance(realPos, startPoint.transform.position);
+        float dist = Vector3.Distance(realPos, transform.position);
         if (dist < 0.1f)
         {
             targetTime = Time.time + duration;
-            increaseEndPoint();
+            increaseStartPoint();
         }
     }
 
-    public void increaseEndPoint() {
-        endPoint++;
+    public void increaseStartPoint() {
+        startPoint++;
     }
 }

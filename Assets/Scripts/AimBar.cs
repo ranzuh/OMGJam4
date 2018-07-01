@@ -12,7 +12,10 @@ public class AimBar : MonoBehaviour {
 
         transform.localScale = new Vector3(Mathf.Min(1+Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position),10),1,22);
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            transform.parent.gameObject.GetComponent<Player>().StartCoroutine("CheckTime");
             Destroy(this.gameObject);
+        }
     }
 }

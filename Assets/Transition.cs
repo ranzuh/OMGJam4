@@ -13,7 +13,6 @@ public class Transition : MonoBehaviour {
 	public IEnumerator Fade() {
 		Image image = GetComponent<Image>();
 		Color color = image.color;
-		Debug.Log("test");
 		
 		yield return new WaitForSeconds(1);
 

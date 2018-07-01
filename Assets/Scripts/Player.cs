@@ -27,14 +27,14 @@ public class Player : MonoBehaviour {
     private int time = 5;
     Text text;
 
-    void Start() {
+    void Start()
+    {
         food = GameObject.FindGameObjectsWithTag("MustEat");
         finish = GameObject.FindGameObjectWithTag("Finish");
 
         text = GameObject.Find("Scoretext").GetComponent<Text>();
         SetScoreText();
 
-        StartCoroutine("CheckTime");
     }
 
     private void Update()
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour {
         }
     }
     void SetScoreText() {
-        text.text = "Score: " + foodCount.ToString();
+        text.text = "Food Left: " + food.Length.ToString();
     }
 
     IEnumerator NextScene() {

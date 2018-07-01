@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Win() {
-        Debug.Log("VICTORY½");Camera.current.
+        Debug.Log("VICTORY½");
     }
 
 }

@@ -250,6 +250,7 @@ MonoBehaviour:
   food: []
   finish: {fileID: 0}
   panel: {fileID: 1570942497071222, guid: 4dd17453b4ba647c69854450a15560ee, type: 2}
+  PressRText: {fileID: 1489387202716092, guid: b84a12df8c89e4f25b44775a524f0c21, type: 2}
 --- !u!114 &114379410026683548
 MonoBehaviour:
   m_ObjectHideFlags: 1

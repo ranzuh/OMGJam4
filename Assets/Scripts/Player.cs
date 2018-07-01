@@ -21,6 +21,9 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject panel;
 
+    [SerializeField]
+    GameObject PressRText;
+
 
     Text text;
 
@@ -128,6 +131,9 @@ public class Player : MonoBehaviour {
         Vector3 pos = transform.position;
         pos.z = Camera.main.transform.position.z;
         Camera.main.transform.position = pos;
-        yield return null;
+        yield return new WaitForSeconds(2);
+        PressRText = Instantiate(PressRText);
+        PressRText.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        
     }
 }

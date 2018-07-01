@@ -11,6 +11,10 @@ public class PlayButtonScript : MonoBehaviour{
         SceneManager.LoadScene(1);
     }
 
+    public void GoMainMenu() {
+        SceneManager.LoadScene(0);
+    }
+
     public void PlayBonusLevel() {
         SceneManager.LoadScene("BonusLevel");
     }

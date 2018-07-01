@@ -148,5 +148,11 @@ public class Player : MonoBehaviour {
             }
             yield return null;
         }
+
     }
+    
+    void OnTriggerEnter2D(Collider2D col) {
+        time = 5;
+    }
+    
 }

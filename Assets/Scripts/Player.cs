@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject PressRText;
 
-
+    private int time = 5;
     Text text;
 
     void Start() {
@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
 
         text = GameObject.Find("Scoretext").GetComponent<Text>();
         SetScoreText();
+
+        StartCoroutine("CheckTime");
     }
 
     private void Update()
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
+        time = 5;
         if(col.gameObject.tag.Equals("MustEat")) {
             GameObject collidedFood = col.gameObject;
             List<GameObject> foodList = new List<GameObject>(food);
@@ -131,9 +134,19 @@ public class Player : MonoBehaviour {
         Vector3 pos = transform.position;
         pos.z = Camera.main.transform.position.z;
         Camera.main.transform.position = pos;
-        yield return new WaitForSeconds(2);
-        PressRText = Instantiate(PressRText);
-        PressRText.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        
+        yield return null;
+    }
+
+    IEnumerator CheckTime() {
+        while (true) {
+            yield return new WaitForSeconds(2);
+            time -= 2;
+            if (time < 0)
+            {
+                PressRText = Instantiate(PressRText);
+                PressRText.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            }
+            yield return null;
+        }
     }
 }

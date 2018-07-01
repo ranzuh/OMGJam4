@@ -58,12 +58,14 @@ public class Player : MonoBehaviour {
 
     }
 
-    public void CheckWin()
+    public bool CheckWin()
     {
         if (food.Length == 0)
         {
             Win();
+            return true;
         }
+        return false;
     }
 
     public void Win() {
@@ -78,6 +80,13 @@ public class Player : MonoBehaviour {
         Invoke("NextScene", 0.5f);
     }
 
+    private void OnBecameInvisible()
+    {
+        if (gameObject.activeInHierarchy) {
+            StartCoroutine("FollowPlayer");
+            
+        }
+    }
     void SetScoreText() {
         text.text = "Score: " + foodCount.ToString();
     }
@@ -87,4 +96,10 @@ public class Player : MonoBehaviour {
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
+    IEnumerator FollowPlayer() {
+        Vector3 pos = transform.position;
+        pos.z = Camera.main.transform.position.z;
+        Camera.main.transform.position = pos;
+        yield return null;
+    }
 }

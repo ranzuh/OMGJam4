@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58479724998484638}
   m_Layer: 0
   m_Name: endArea
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +83,7 @@ MonoBehaviour:
   rotate: 1
   rotateSpeed: 0.34
   fade: 0
+  fade2: 0
   changeColor: 1
 --- !u!212 &212377431726531744
 SpriteRenderer:

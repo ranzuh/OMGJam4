@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
@@ -27,6 +28,13 @@ public class Player : MonoBehaviour {
         SetScoreText();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         GameObject collidedFood = col.gameObject;
@@ -38,21 +46,19 @@ public class Player : MonoBehaviour {
         audio.Play();
 
         List<GameObject> foodList = new List<GameObject>(food);
+        foodList.Remove(collidedFood);
+        food = foodList.ToArray();
 
-        if(finish == null)
+        if (finish == null)
             CheckWin();
 
-        foodList.Remove(collidedFood);
-
-        food = foodList.ToArray();
-        
     }
 
     public void CheckWin()
     {
         if (food.Length == 0)
         {
-            GameManager.Instance.Win();
+            GameManager.Instance.GetComponent<GameManager>().Win();
         }
     }
 

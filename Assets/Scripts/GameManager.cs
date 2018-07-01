@@ -3,26 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    private static GameManager singleton;
+    private static GameObject singleton = null;
 
-    public static GameManager Instance {
+    public int wons = 0;
+
+    public static GameObject Instance {
     get {
-            if (singleton == null) { 
-                singleton = Instantiate(new GameObject().AddComponent<GameManager>());
+            if (singleton == null) {
+                singleton = new GameObject("GameManager");
+                singleton.AddComponent<GameManager>();
+                DontDestroyOnLoad(singleton);
             }
             return singleton;
             
         }
     }
 
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.R)) {
-			SceneManager.LoadScene("TestLevel");
-		}
-	}
-
     public void Win() {
         Debug.Log("VICTORY½");
+        wons++;
     }
 
 }

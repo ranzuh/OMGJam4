@@ -50,13 +50,10 @@ public class Player : MonoBehaviour {
 
     public void CheckWin()
     {
-        List<GameObject> foodList = new List<GameObject>(food);
-
         if (food.Length == 0)
         {
             GameManager.Instance.Win();
         }
-
     }
 
     void SetScoreText() {

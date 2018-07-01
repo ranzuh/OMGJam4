@@ -44,18 +44,19 @@ public class Player : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "MustEat") {
+        if(col.gameObject.tag.Equals("MustEat")) {
             GameObject collidedFood = col.gameObject;
             List<GameObject> foodList = new List<GameObject>(food);
             foodList.Remove(collidedFood);
             food = foodList.ToArray();
-
-            foodCount++;
-            SetScoreText();
-
-            if (finish == null)
-                CheckWin();
         }
+        
+
+        foodCount++;
+        SetScoreText();
+
+        if (finish == null)
+            CheckWin();
         
         Destroy(col.gameObject);
         
@@ -84,7 +85,7 @@ public class Player : MonoBehaviour {
         panel.transform.SetParent(GameObject.Find("Canvas").transform, false);
         panel.GetComponent<Transition>().FadeIn();
         
-        Invoke("NextScene", 0.5f);
+        Invoke("NextScene", 1.5f);
     }
 
     private void OnBecameInvisible()

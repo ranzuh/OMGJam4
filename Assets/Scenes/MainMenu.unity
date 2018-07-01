@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 776136025}
   - component: {fileID: 776136024}
   - component: {fileID: 776136028}
+  - component: {fileID: 776136029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -474,6 +475,24 @@ Skybox:
   m_GameObject: {fileID: 776136023}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 9097f701a22513c4394dc16cc095caa8, type: 2}
+--- !u!95 &776136029
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 776136023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e9b100652d43449aa3b7cabb462a7bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1286418902
 GameObject:
   m_ObjectHideFlags: 0

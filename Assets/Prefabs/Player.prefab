@@ -230,6 +230,7 @@ MonoBehaviour:
   collisionSound: {fileID: 8300000, guid: 696a5c465e76d4740a212cf6af56e898, type: 3}
   food: []
   finish: {fileID: 0}
+  panel: {fileID: 1570942497071222, guid: 4dd17453b4ba647c69854450a15560ee, type: 2}
 --- !u!114 &114379410026683548
 MonoBehaviour:
   m_ObjectHideFlags: 1

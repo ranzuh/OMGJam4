@@ -18,6 +18,10 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject finish;
 
+    [SerializeField]
+    GameObject panel;
+
+
     Text text;
 
     void Start() {
@@ -58,12 +62,29 @@ public class Player : MonoBehaviour {
     {
         if (food.Length == 0)
         {
-            GameManager.Instance.GetComponent<GameManager>().Win();
+            Win();
         }
+    }
+
+    public void Win() {
+        // WIN
+        Debug.Log("VICTORY½");
+
+        //Fade screen
+        panel = Instantiate(panel);
+        panel.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        panel.GetComponent<Transition>().FadeIn();
+        
+        Invoke("NextScene", 0.5f);
     }
 
     void SetScoreText() {
         text.text = "Score: " + foodCount.ToString();
+    }
+
+    void NextScene() {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
 }

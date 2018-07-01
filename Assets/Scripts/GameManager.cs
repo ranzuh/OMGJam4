@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 
     private static GameObject singleton = null;
 
+
     public static GameObject Instance {
     get {
             if (singleton == null) {

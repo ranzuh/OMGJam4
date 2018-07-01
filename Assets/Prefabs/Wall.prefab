@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4310424372446124}
   - component: {fileID: 212833702246532446}
   - component: {fileID: 58688800441533336}
+  - component: {fileID: 114617257831148846}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_GameObject: {fileID: 1210078903033812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 4310424372446124}
   m_RootOrder: 0
@@ -103,6 +104,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114617257831148846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143020477357116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2241ae0ae36db458c7ed2cb057274a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: {fileID: 1865838139825174, guid: 3a394bb4ba680b941b1088a0334bc6c7, type: 2}
+  repulse: 1
 --- !u!212 &212379975437079512
 SpriteRenderer:
   m_ObjectHideFlags: 1

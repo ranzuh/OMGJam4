@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 4992497134544392}
   - component: {fileID: 58858390943128258}
   - component: {fileID: 212339292506833966}
+  - component: {fileID: 114038864287899798}
+  - component: {fileID: 114170572529015666}
   m_Layer: 0
   m_Name: Food
   m_TagString: MustEat
@@ -103,6 +105,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &114038864287899798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244980402617360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e01ba99750e1a542b46a027f16e9817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: eca30833395b1244bba553703d9f9783, type: 3}
+--- !u!114 &114170572529015666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244980402617360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2241ae0ae36db458c7ed2cb057274a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: {fileID: 1807949047895650, guid: 3f43126d6f56eb44ca4885f80bb744cf, type: 2}
+  repulse: 0
+  divider: 2
 --- !u!212 &212339292506833966
 SpriteRenderer:
   m_ObjectHideFlags: 1

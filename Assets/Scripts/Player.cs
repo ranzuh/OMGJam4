@@ -96,7 +96,7 @@ public class Player : MonoBehaviour {
         player.GetComponent<Rigidbody2D>().drag = 1000;
         if(finish != null)
            finish.GetComponent<Animator>().enabled = true;
-        yield return null;
+        yield return NextScene();
     }
 
     private void OnBecameInvisible()
